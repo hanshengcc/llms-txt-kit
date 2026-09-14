@@ -1,0 +1,61 @@
+{
+  "name": "llms-txt-kit",
+  "version": "1.0.0",
+  "description": "Ultra-lightweight, zero-dependency toolkit to build, parse, validate, and serve llms.txt and llms-full.txt for GEO (Generative Engine Optimization) & AI search crawlers.",
+  "author": "hanshengcc",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanshengcc/llms-txt-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hanshengcc/llms-txt-kit/issues"
+  },
+  "homepage": "https://github.com/hanshengcc/llms-txt-kit#readme",
+  "keywords": [
+    "llms-txt",
+    "llms",
+    "geo",
+    "generative-engine-optimization",
+    "ai-search",
+    "perplexity",
+    "searchgpt",
+    "seo",
+    "robots-txt",
+    "markdown",
+    "ai-crawler",
+    "nextjs"
+  ],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "README_zh.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "tsup": "^8.4.0",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.7"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
