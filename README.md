@@ -3,6 +3,7 @@
 [![CI](https://github.com/hanshengcc/llms-txt-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/hanshengcc/llms-txt-kit/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![npm](https://img.shields.io/npm/v/@callaiapi/llms-txt-kit.svg)](https://www.npmjs.com/package/@callaiapi/llms-txt-kit)
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-0-brightgreen.svg)](package.json)
 
 > **[中文文档 (README_zh.md)](./README_zh.md)**
@@ -31,11 +32,11 @@ When AI models research a website or answer user questions about your product, t
 ## 📦 Installation
 
 ```bash
-npm install llms-txt-kit
+npm install @callaiapi/llms-txt-kit
 # or
-pnpm add llms-txt-kit
+pnpm add @callaiapi/llms-txt-kit
 # or
-yarn add llms-txt-kit
+yarn add @callaiapi/llms-txt-kit
 ```
 
 ---
@@ -45,7 +46,7 @@ yarn add llms-txt-kit
 ### 1. Build an `llms.txt` File Programmatically
 
 ```typescript
-import { LlmsTxtBuilder } from 'llms-txt-kit';
+import { LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
 
 const builder = new LlmsTxtBuilder()
   .setTitle('Acme Cloud')
@@ -111,7 +112,7 @@ Guides for getting started and deploying servers
 ### 2. Parse Existing `llms.txt` Files
 
 ```typescript
-import { parseLlmsTxt } from 'llms-txt-kit';
+import { parseLlmsTxt } from '@callaiapi/llms-txt-kit';
 
 const rawContent = await fetch('https://example.com/llms.txt').then((r) => r.text());
 const doc = parseLlmsTxt(rawContent);
@@ -126,7 +127,7 @@ console.log('Sections:', doc.sections);
 ### 3. Validate Compliance Against the Standard
 
 ```typescript
-import { validateLlmsTxt } from 'llms-txt-kit';
+import { validateLlmsTxt } from '@callaiapi/llms-txt-kit';
 
 const result = validateLlmsTxt(rawContent);
 
@@ -146,7 +147,7 @@ if (result.valid) {
 Create `app/llms.txt/route.ts`:
 
 ```typescript
-import { createLlmsRoute, LlmsTxtBuilder } from 'llms-txt-kit';
+import { createLlmsRoute, LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
 
 const builder = new LlmsTxtBuilder()
   .setTitle('My Product')
@@ -168,7 +169,7 @@ export const GET = createLlmsRoute(builder, {
 Create `app/llms-full.txt/route.ts`:
 
 ```typescript
-import { createLlmsRoute } from 'llms-txt-kit';
+import { createLlmsRoute } from '@callaiapi/llms-txt-kit';
 import { builder } from './shared';
 
 // Outputs consolidated llms-full.txt
@@ -181,7 +182,7 @@ export const GET = createLlmsRoute(builder, { full: true });
 
 ```typescript
 import express from 'express';
-import { llmsTxtMiddleware, LlmsTxtBuilder } from 'llms-txt-kit';
+import { llmsTxtMiddleware, LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
 
 const app = express();
 const builder = new LlmsTxtBuilder()

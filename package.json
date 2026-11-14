@@ -1,5 +1,5 @@
 {
-  "name": "llms-txt-kit",
+  "name": "@callaiapi/llms-txt-kit",
   "version": "1.0.0",
   "description": "Ultra-lightweight, zero-dependency toolkit to build, parse, validate, and serve llms.txt and llms-full.txt for GEO (Generative Engine Optimization) & AI search crawlers.",
   "author": "hanshengcc",

@@ -15,7 +15,7 @@ export interface NextRouteOptions {
  *
  * @example
  * // app/llms.txt/route.ts
- * import { createLlmsRoute, LlmsTxtBuilder } from 'llms-txt-kit';
+ * import { createLlmsRoute, LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
  *
  * const builder = new LlmsTxtBuilder()
  *   .setTitle('My Product')

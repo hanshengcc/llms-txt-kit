@@ -3,6 +3,7 @@
 [![CI](https://github.com/hanshengcc/llms-txt-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/hanshengcc/llms-txt-kit/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![npm](https://img.shields.io/npm/v/@callaiapi/llms-txt-kit.svg)](https://www.npmjs.com/package/@callaiapi/llms-txt-kit)
 [![Zero Dependencies](https://img.shields.io/badge/Dependencies-0-brightgreen.svg)](package.json)
 
 > **[English Documentation (README.md)](./README.md)**
@@ -31,11 +32,11 @@
 ## 📦 安装
 
 ```bash
-npm install llms-txt-kit
+npm install @callaiapi/llms-txt-kit
 # 或者
-pnpm add llms-txt-kit
+pnpm add @callaiapi/llms-txt-kit
 # 或者
-yarn add llms-txt-kit
+yarn add @callaiapi/llms-txt-kit
 ```
 
 ---
@@ -45,7 +46,7 @@ yarn add llms-txt-kit
 ### 1. 声明式生成合规的 `llms.txt`
 
 ```typescript
-import { LlmsTxtBuilder } from 'llms-txt-kit';
+import { LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
 
 const builder = new LlmsTxtBuilder()
   .setTitle('青柠AI (CallAI)')
@@ -111,7 +112,7 @@ const fullMarkdown = builder.toFullMarkdown();
 ### 2. 解析既有 `llms.txt`
 
 ```typescript
-import { parseLlmsTxt } from 'llms-txt-kit';
+import { parseLlmsTxt } from '@callaiapi/llms-txt-kit';
 
 const raw = await fetch('https://callaiapi.com/llms.txt').then((res) => res.text());
 const doc = parseLlmsTxt(raw);
@@ -126,7 +127,7 @@ console.log('栏目数量:', doc.sections.length);
 ### 3. 校验规范合规性
 
 ```typescript
-import { validateLlmsTxt } from 'llms-txt-kit';
+import { validateLlmsTxt } from '@callaiapi/llms-txt-kit';
 
 const result = validateLlmsTxt(raw);
 
@@ -146,7 +147,7 @@ if (result.valid) {
 在 `app/llms.txt/route.ts` 中创建路由：
 
 ```typescript
-import { createLlmsRoute, LlmsTxtBuilder } from 'llms-txt-kit';
+import { createLlmsRoute, LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
 
 const builder = new LlmsTxtBuilder()
   .setTitle('我的独立站')
@@ -171,7 +172,7 @@ export const GET = createLlmsRoute(builder, {
 
 ```typescript
 import express from 'express';
-import { llmsTxtMiddleware, LlmsTxtBuilder } from 'llms-txt-kit';
+import { llmsTxtMiddleware, LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
 
 const app = express();
 const builder = new LlmsTxtBuilder()

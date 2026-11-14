@@ -13,7 +13,7 @@ export interface ExpressMiddlewareOptions {
  *
  * @example
  * import express from 'express';
- * import { llmsTxtMiddleware, LlmsTxtBuilder } from 'llms-txt-kit';
+ * import { llmsTxtMiddleware, LlmsTxtBuilder } from '@callaiapi/llms-txt-kit';
  *
  * const app = express();
  * const builder = new LlmsTxtBuilder().setTitle('My API').setSummary('API info');
